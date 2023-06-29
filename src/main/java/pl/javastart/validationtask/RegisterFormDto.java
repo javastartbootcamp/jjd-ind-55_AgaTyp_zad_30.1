@@ -1,14 +1,30 @@
 package pl.javastart.validationtask;
 
+import jakarta.validation.constraints.*;
+
 public class RegisterFormDto {
 
+    @NotBlank
+    @Size(min = 3, max = 100)
     private String firstName;
+    @NotBlank
+    @Size(min = 3, max = 100)
     private String surname;
+    @NotBlank
     private String address;
+    @NotBlank
+    @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
     private String postalCode;
+    @NotBlank
     private String city;
+    @NotBlank
+    @EmailAddress(regexpPattern = "^[\\w\\-\\.]+@([\\w-]+\\.)+[\\w-]{2,}$")
     private String email;
+    @NotBlank
+//    @Pattern(regexp = "^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$")
+    @Password(regexpPattern = "^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!*]).*$")
     private String password;
+    @AssertTrue
     private boolean termsAgreement;
 
     public String getFirstName() {
