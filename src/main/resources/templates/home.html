@@ -21,27 +21,32 @@
             <div class="col">
                 <label for="name" class="form-label">Imię</label>
                 <input type="text" class="form-control" id="name" placeholder="Imię" th:field="*{firstName}">
+                <p th:errors="*{firstName}" class="text-danger fw-light" style="font-size: smaller">Błędy związane z imieniem</p>
             </div>
             <div class="col">
                 <label for="surname" class="form-label">Nazwisko</label>
                 <input type="text" class="form-control" placeholder="Nazwisko" id="surname" th:field="*{surname}">
+                <p th:errors="*{surname}" class="text-danger fw-light" style="font-size: smaller">Błędy związane z imieniem</p>
             </div>
         </div>
 
         <div class="col-12">
             <label for="address" class="form-label">Ulica, numer domu i mieszkania</label>
             <input type="text" class="form-control" id="address" placeholder="Wiejska 32a/4" th:field="*{address}">
+            <p th:errors="*{address}" class="text-danger fw-light" style="font-size: smaller">Błędy związane z imieniem</p>
         </div>
 
         <div class="row mt-4">
             <div class="col-2">
                 <label for="postalCode" class="form-label">Kod pocztowy</label>
                 <input type="text" class="form-control" id="postalCode" placeholder="12-345" th:field="*{postalCode}">
+                <p th:errors="*{postalCode}" class="text-danger fw-light" style="font-size: smaller">Błędy związane z imieniem</p>
             </div>
 
             <div class="col">
                 <label for="city" class="form-label">Miasto</label>
                 <input type="text" class="form-control" id="city" placeholder="Miasto" th:field="*{city}">
+                <p th:errors="*{city}" class="text-danger fw-light" style="font-size: smaller">Błędy związane z imieniem</p>
             </div>
         </div>
 
@@ -49,16 +54,19 @@
             <label for="email" class="form-label">Adres email</label>
             <input type="email" class="form-control" id="email" placeholder="email@example.com"   th:field="*{email}">
             <div id="emailHelp" class="form-text">Nikomu nie udostępniamy Twojego adresu email.</div>
+            <p th:errors="*{email}" class="text-danger fw-light" style="font-size: smaller">Błędy związane z imieniem</p>
         </div>
 
         <div class="mb-3">
             <label for="password" class="form-label">Hasło</label>
             <input type="password" class="form-control" id="password" th:field="*{password}">
+            <p th:errors="*{password}" class="text-danger fw-light" style="font-size: smaller">Błędy związane z imieniem</p>
         </div>
 
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="termsAgreement" th:field="*{termsAgreement}">
             <label class="form-check-label" for="termsAgreement">Zgadzam się na warunki przedstawione w <a href="#">regulaminie</a></label>
+            <p th:errors="*{termsAgreement}" class="text-danger fw-light" style="font-size: smaller">Błędy związane z imieniem</p>
         </div>
         <button type="submit" class="btn btn-primary">Rejestruj</button>
 
